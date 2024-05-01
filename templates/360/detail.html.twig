@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}NBC | Leaks{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/imagesloaded.min.js') }}"></script>
+    <script src="{{ asset('js/magnific.js') }}"></script>
+    <link href="{{ asset('css/magnific.css') }}" rel="stylesheet"/>
+    <script src="{{ asset('js/masonry.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid mt-5">
+    <div class="row">
+        <div id="detail-header" class="col" style="background: linear-gradient(
+                rgba(0, 0, 0, 0.7),
+                rgba(0, 0, 0, 0.7)
+                ), url('/dumps/360/{{ details.path }}/{{ details.previews.landscape }}.jpg'); background-color: rgba(0,0,0,0.25); background-size: cover;
+                background-position: center;">
+            <h1>{{ details.model }}</h1>
+            {% if details.description is defined %}
+                <p class="lead px-4">{{ details.description }}</p>
+            {% endif %}
+            <div class="tags my-2">
+                {% if details.tags.0 is defined %}
+                <a href="/360/tag/{{ details.tags.0 }}">
+                    <div class="btn btn-custom-1 ms-1">
+                        {{ details.tags.0 }}
+                    </div>
+                </a>
+                {% endif %}
+                {% if details.tags.1 is defined %}
+                <a href="/360/tag/{{ details.tags.1 }}">
+                    <div class="btn btn-custom-1 ms-1">
+                        {{ details.tags.1 }}
+                    </div>
+                </a>
+                {% endif %}
+            </div>
+            <div id="comfort" class="btn btn-custom-2 d-none"><i class="fas fa-search-plus"></i></div>
+            <div id="compact" class="btn btn-custom-2"><i class="fas fa-search-minus"></i></div>
+        </div>
+    </div>
+    <div class="row previews-grid">
+        {% set initial = 0 %}
+        {% for image in details.images %}
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2 px-0 gx-1 preview-item">
+                <a class="magnific" href="/{{ image }}">
+                    <img class="img-fluid" src="/{{ image }}">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <script src="{{ asset('js/serve.js') }}"></script>
+{% endblock %}

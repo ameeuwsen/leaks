@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div id="list-container" class="container px-0 px-md-3">
+        <div class="row">
+            <div class="col mt-3 px-4 text-center">
+                <div class="input-group input-group-lg">
+                    <input id="listSearch" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Search creator name...">
+                </div>
+            </div>
+        </div>
+        {% if tags is defined %}
+        <div class="row">
+            <div class="col mt-3 px-4">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Tag Cloud
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                {% for tag in tags %}
+                                    <a href="/onlyfans/tag/{{ tag }}">
+                                        <div class="btn btn-custom-1 m-1">
+                                            {{ tag }}
+                                        </div>
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% if tag is defined %}
+        <div class="row">
+            <div class="col text-center mt-5">
+                <h2>filtering for:<h2>
+                <a href="/onlyfans">
+                    <div class="btn btn-custom-1 btn-reset-filter ms-1">
+                        {{ tag }} x
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        <div class="row">
+            {% for creator,dump in dumps %}
+                {% if dump.status is not defined %}
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 text-center pt-4">
+                        <h2 class="searchable"><a href="/onlyfans/{{ creator }}">{{ creator }}</a></h2>
+                        {% if dump.count is defined %}
+                            <p><i class="fas fa-image"></i> {{ dump.count }}</p>
+                            <h3><i class="fas fa-image"></i> {{ dump.count }}</h3>
+                        {% endif %}
+                        <div class="tags my-2">
+                            <a href="/onlyfans/tag/{{ dump.tags.0 }}">
+                                <div class="btn btn-custom-1 ms-1">
+                                    {{ dump.tags.0 }}
+                                </div>
+                            </a>
+                            <a href="/onlyfans/tag/{{ dump.tags.1 }}">
+                                <div class="btn btn-custom-1 ms-1">
+                                    {{ dump.tags.1 }}
+                                </div>
+                            </a>
+                            <a href="/onlyfans/tag/{{ dump.tags.2 }}">
+                                <div class="btn btn-custom-1 ms-1">
+                                    {{ dump.tags.2 }}
+                                </div>
+                            </a>
+                        </div>
+                        <div class="flex">
+                            <a class="preview-item" href="/onlyfans/{{ creator }}">
+                                <img loading="lazy" class="preview-portrait" src="/thumbs/onlyfans/{{ creator }}/{{ dump.previews.portrait|replace({'.jpg': '.webp'}) }}" />
+                                <img loading="lazy" class="preview-landscape" src="/thumbs/onlyfans/{{ creator }}/{{ dump.previews.landscape|replace({'.jpg': '.webp'}) }}" />
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ creator }} | Leaks{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/imagesloaded.min.js') }}"></script>
+    <script src="{{ asset('js/magnific.js') }}"></script>
+    <link href="{{ asset('css/magnific.css') }}" rel="stylesheet"/>
+    <script src="{{ asset('js/masonry.js') }}"></script>
+    <script src="{{ asset('js/serve.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div id="detail-header" class="col" style="background: linear-gradient(
+                rgba(0, 0, 0, 0.7),
+                rgba(0, 0, 0, 0.7)
+                ), url('/dumps/onlyfans/{{ creator }}/photos/{{ details.previews.landscape }}'); background-color: rgba(0,0,0,0.25); background-size: cover;
+                background-position: center;">
+            <a href="/onlyfans/{{ creator }}"><h1>{{ creator }}</h1></a>
+            <div>
+                {% if details.onlyfans is defined %}
+                    <a class="btn btn-primary" href="https://onlyfans.com/{{ details.onlyfans }}">Onlyfans</a>
+                {% endif %}
+            </div>
+            <div class="tags my-2">
+                <a href="/onlyfans/tag/{{ details.tags.0 }}">
+                    <div class="btn btn-custom-1 ms-1">
+                        {{ details.tags.0 }}
+                    </div>
+                </a>
+                <a href="/onlyfans/tag/{{ details.tags.1 }}">
+                    <div class="btn btn-custom-1 ms-1">
+                        {{ details.tags.1 }}
+                    </div>
+                </a>
+                <a href="/onlyfans/tag/{{ details.tags.2 }}">
+                    <div class="btn btn-custom-1 ms-1">
+                        {{ details.tags.2  }}
+                    </div>
+                </a>
+            </div>
+            <div class="description">
+                {% if details.description is defined %}
+                    <p class="lead px-4">{{ details.description }}</p>
+                {% endif %}
+            </div>
+            <div id="comfort" class="btn btn-custom-2 d-none"><i class="fas fa-search-plus"></i></div>
+            <div id="compact" class="btn btn-custom-2"><i class="fas fa-search-minus"></i></div>
+            {% if filter == 'reverse' %}
+            <a href="/onlyfans/{{ creator }}">
+            {% else%}
+            <a href="/onlyfans/{{ creator }}/reverse">
+            {% endif %}
+            <div id="reverse" class="btn btn-custom-2">
+                <i class="fas fa-arrows-alt-v"></i>
+            </div>
+            </a>
+{#            <div id="randomize" class="btn btn-custom-2"><i class="fas fa-random"></i></div>#}
+        </div>
+    </div>
+    <div class="row previews-grid">
+        <div id="loading">
+            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            <h3>Be patient you horny fuck. The fap is loading...</h3>
+        </div>
+
+        {% set items = details.images %}
+
+        {# Database based reverse #}
+        {% if details.reverse is defined %}
+            {% set items = items|reverse %}
+        {% endif %}
+
+        {# Reverse Filter #}
+        {% if filter == 'reverse' %}
+            {% set items = items|reverse %}
+        {% endif %}
+
+
+        {% set initial = 0 %}
+        {% for image in items %}
+        <div class="col-6 col-md-4 col-lg-3 col-xl-2 px-0 gx-1 preview-item">
+            {% if mode == "thumbs" %}
+                <a class="magnific" href="/{{ image }}">
+            {% else %}
+                {% set find = 'onlyfans/' ~ creator %}
+                {% set replace = 'onlyfans/' ~ creator ~ '/photos' %}
+                {% if details.jpeg is defined %}
+                <a class="magnific" href="/{{ image|replace({'thumbs': 'dumps', '.webp': '.jpeg', (find): (replace)}) }}">
+                {% else %}
+                <a class="magnific" href="/{{ image|replace({'thumbs': 'dumps', '.webp': '.jpg', (find): (replace)}) }}">
+                {% endif %}
+            {% endif %}
+    {#                <img loading="lazy" class="img-fluid" src="/{{ image }}">#}
+            {% if initial < details.initial %}
+            {% set initial = initial + 1 %}
+                <img class="img-fluid" src="/{{ image }}">
+            {% else %}
+                <img class="img-fluid" loading="lazy" data-src="/{{ image }}">
+            {% endif %}
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

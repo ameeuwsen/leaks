@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{% block title %}Leaks!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link href="{{ asset('css/bs.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/custom.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/all.min.css') }}" rel="stylesheet"/>
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('js/jquery.cookie.js') }}"></script>
+        <script src="{{ asset('js/bs.js') }}"></script>
+        <script src="{{ asset('js/all.js') }}"></script>
+        <script>
+            $(document).ready(function(){
+                $("#listSearch").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $(".searchable").filter(function() {
+                        $(this).parent().toggle($(this).parent().text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body>
+{#        <nav class="navbar fixed navbar-expand-lg navbar-dark bg-dark">#}
+{#            <div class="container-fluid">#}
+{#                <img class="nav-logo" src="/assets/leak_logo.png">#}
+{#                <a class="navbar-brand" href="/">Leaks</a>#}
+{#                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">#}
+{#                    <span class="navbar-toggler-icon"></span>#}
+{#                </button>#}
+{#                <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">#}
+{#                    <ul class="navbar-nav mb-5 mb-lg-0">#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="/onlyfans">OnlyFans</a>#}
+{#                        </li>#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="/nbc">NBC</a>#}
+{#                        </li>#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="/360">ArtModels360</a>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#        </nav>#}
+    <nav class="navbar fixed navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <img class="nav-logo" src="/assets/leak_logo.png">
+            <a class="navbar-brand" href="/">Leaks</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-5 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/onlyfans">OnlyFans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/nbc">NBC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/360">ArtModels360</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        {% block body %}{% endblock %}
+    <div class="container">
+        <div class="row">
+            <div class="col py-5 text-center">
+                <h3>End of fap content</h3>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

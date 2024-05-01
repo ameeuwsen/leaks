@@ -1,0 +1,135 @@
+alice:
+  path: alic
+  description: 'Alice is a 7 month pregnant female art model with an average build and provides a large number of nude poses as well as a few with tulle draping.  They are ideal reference photos for sculptors, painters, artists and art students.'
+  previews:
+    portrait: alic-017-16
+    landscape: alic-077-1
+  tags:
+    - white
+    - pregnant
+alice-baby:
+  path: aloa
+  description: 'Alice is a new mother and a strong believer in the health benefits of breast feeding. In this set she provides a large number of nude poses in a variety of standing, sitting, kneeling and prone positions showing her nursing and caring for her infant.  Her poses make ideal reference photos for sculptors, painters, artists and art students.'
+  previews:
+    portrait: aloa-010-16
+    landscape: aloa-010-16
+  tags:
+    - white
+    - baby
+allison:
+  path: alli
+  description: 'Allison is a brunette with a slim build. Both dressed and bare (not nude) poses.'
+  previews:
+    portrait: alli-009-2
+    landscape: alli-011-8
+  tags:
+    - white
+    - skinny
+amy:
+  path: amyj
+  description: 'Amy Jo is a brunette with a full figure build. Both nude and dressed poses.'
+  previews:
+    portrait: amyj-006-9
+    landscape: amyj-002-9
+  tags:
+    - white
+    - chubby
+anne:
+  path: anne
+  description: 'Anne is an brunette female art model with an average build and provides a large number of nude poses that are ideal reference photos for sculptors, painters, artists and art students.'
+  previews:
+    portrait: anne-011-16
+    landscape: anne-020-13
+  tags:
+    - white
+    - average
+annn:
+  path: annn
+  description: 'Anne II describes herself as a hippy chic and sports the natural hair to prove it. She poses in a wide variety of expressive nude 360-degree poses that are perfect for sculptors, painters and art students'
+  previews:
+    portrait: annn-005-9
+    landscape: annn-002-5
+  tags:
+    - white
+    - average
+brandy:
+  path: bran
+  description: 'Brandy is a mother who is passionate about the benefits of breastfeeding.  She provided a number of inspirational poses showing her breastfeeding her infant to be used as reference photos by sculptors, painters, artists and art students.'
+  previews:
+    portrait: bran-007-16
+    landscape: bran-011-1
+  tags:
+    - white
+    - baby
+brittany:
+  path: brit
+  description: 'Brittany is a blonde with an average build and long  hair. She can be seen in a wide variety of  artist nude poses that are perfect for sculptors, painters and are great for art students to practice.'
+  previews:
+    portrait: brit-029-16
+    landscape: brit-011-2
+  tags:
+    - white
+    - average
+chantel:
+  path: chan
+  description: 'Chantel has short dark hair and a full figure. She provides a wide variety of nude poses that are useful for sculptors, painters and art students.'
+  previews:
+    portrait: chan-002-9
+    landscape: chan-012-5
+  tags:
+    - white
+    - fat
+chelsea:
+  path: chel
+  description: 'Chelsea is a natural blond with an average build. Both nude and dressed poses are available.'
+  previews:
+    portrait: chel-003-9
+    landscape: chel-006-9
+  tags:
+    - white
+    - average
+cheyenne:
+  path: chey
+  description: 'Cheyenne is a brunette with a slim build and long dark hair in a ponytail. Cheyenne presents a wide variety of nude art poses which are perfect for painters, sculptors and students to practice figure work.'
+  previews:
+    portrait: chey-002-9
+    landscape: chey-068-5
+  tags:
+    - white
+    - fit
+cierce:
+  path: cier
+  description: 'Cierce was born with spina bifida and has spent the majority of her life in a wheelchair. There are a variety of nude, bare and clothed art reference poses available showing her in her chair.'
+  previews:
+    portrait: cier-010-16
+    landscape: cier-010-16
+  tags:
+    - white
+    - disabled
+connie:
+  path: conn
+  description: 'Connie is a mature brunette with an average build. Both nude and dressed poses.'
+  previews:
+    portrait: conn-002-8
+    landscape: conn-002-8
+  tags:
+    - white
+    - mature
+eclipse:
+  path: ecli
+  description: 'Eclipse is a professional model who specializes in fine art and provides a wide variety of dynamic nude poses that are perfect for sculptors, painters, artists and art students.'
+  previews:
+    portrait: ecli-077-9
+    landscape: ecli-072-9
+  tags:
+    - white
+    - fit
+emily:
+  path: emil
+  description: 'Emily is a slim female art model with short blond hair and a few tattoos.  She provides a large number of nude poses as well as several with form-fitting clothes.  They are ideal reference photos for sculptors, painters, artists and art students.'
+  previews:
+    portrait: emil-018-16
+    landscape: emil-084-9
+  tags:
+    - white
+    - fit

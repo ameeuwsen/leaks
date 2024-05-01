@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container px-0 mt-5">
+        <div class="row">
+{#            {% for dump in dumps %}#}
+{#                <div class="col-12 col-md-6 col-lg-4     text-center pt-4">#}
+{#                    <div class="flex">#}
+{#                        <a href="/nbc/model/{{ dump.model }}">#}
+{#                            <div class="btn btn-custom-1 ms-1">#}
+{#                                {{ dump.model|replace({'-': ' '})|capitalize }}#}
+{#                            </div>#}
+{#                        </a>#}
+{#                        <a class="preview-item" href="/nbc/{{ dump.name|replace({' ': '_', '-': '_'}) }}">#}
+{#                            <img loading="lazy" src="/dumps/nbc/{{ dump.name|replace({' ': '_', '-': '_'}) }}/sample.jpg" />#}
+{#                        </a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            {% endfor %}#}
+            {% for dump in dumps %}
+                <div class="col-12 col-md-6 col-lg-4 text-center pt-4">
+                    <div class="flex">
+                        <a class="preview-item" href="/nbc/{{ dump }}">
+                            <img loading="lazy" src="/dumps/nbc/processed/{{ dump }}/sample.jpg" />
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

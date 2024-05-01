@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container px-0 mt-5">
+        <div class="row">
+            {% for model,dump in dumps %}
+                {% if dump.status is not defined %}
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 text-center pt-4">
+                        <h2><a href="/360/{{ model }}">{{ model }}</a></h2>
+                        <div class="tags my-2">
+                            {% if dump.tags.0 is defined %}
+                            <a href="/360/tag/{{ dump.tags.0 }}">
+                                <div class="btn btn-custom-1 ms-1">
+                                    {{ dump.tags.0 }}
+                                </div>
+                            </a>
+                            {% endif %}
+                            {% if dump.tags.1 is defined %}
+                            <a href="/360/tag/{{ dump.tags.1 }}">
+                                <div class="btn btn-custom-1 ms-1">
+                                    {{ dump.tags.1 }}
+                                </div>
+                            </a>
+                            {% endif %}
+                        </div>
+                        <div class="flex">
+                            <a class="preview-item" href="/360/{{ model }}">
+                                <img loading="lazy" class="preview-portrait" src="/dumps/360/{{ dump.path }}/{{ dump.previews.portrait }}.jpg" />
+                                <img loading="lazy" class="preview-landscape" src="/dumps/360/{{ dump.path }}/{{ dump.previews.landscape }}.jpg" />
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
