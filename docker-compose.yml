@@ -7,7 +7,7 @@ services:
     networks:
       - leaks_network
     volumes:
-      - dumps:/usr/share/nginx/html/dumps
+      - dumps:/var/www/html/dumps
 volumes:
   dumps:
     external: true
