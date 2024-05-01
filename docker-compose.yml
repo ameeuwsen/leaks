@@ -1,15 +1,18 @@
 version: '3'
+
 services:
   app:
+    image: nginx:stable-alpine
     networks:
       - leaks
     ports:
-      - '8666:80'
+      - "8666:80"
     volumes:
-      - 'dumps:/usr/share/nginx/html/dumps'
+      - dumps:/usr/share/nginx/html/dumps
+
 volumes:
   dumps:
     external: true
+
 networks:
   leaks:
-    driver: bridge
