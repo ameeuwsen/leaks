@@ -8,8 +8,6 @@ services:
       - "8666:80"
     volumes:
       - dumps:/usr/share/nginx/html/dumps
-  php:
-    image: 'php:fpm-alpine'
 volumes:
   dumps:
     external: true
