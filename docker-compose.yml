@@ -2,7 +2,9 @@ version: '3'
 
 services:
   app:
-    image: nginx:stable-alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
     networks:
       - leaks_network
     ports:
