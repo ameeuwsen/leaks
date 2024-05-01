@@ -11,6 +11,7 @@ services:
     ports:
       - "8666:80"
     volumes:
+      - ./public:/usr/share/nginx/html
       - dumps:/usr/share/nginx/html/dumps
 volumes:
   dumps:
