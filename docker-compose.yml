@@ -11,4 +11,7 @@ services:
     ports:
       - "8666:80"
     volumes:
-      - /var/lib/docker/volumes/dumps/_data:/usr/share/nginx/html/dumps
+      - dumps:/usr/share/nginx/html/dumps
+volumes:
+  dumps:
+    external: true
