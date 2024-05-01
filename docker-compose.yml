@@ -9,9 +9,7 @@ services:
     volumes:
       - dumps:/usr/share/nginx/html/dumps
   php:
-    image: php:fpm-alpine
-    networks:
-      - leaks
+    image: 'php:fpm-alpine'
 volumes:
   dumps:
     external: true
