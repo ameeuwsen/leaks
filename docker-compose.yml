@@ -1,12 +1,11 @@
 version: '3'
-
 services:
   app:
-    image: ameeuwsen/leaks:latest
-    networks:
-      - leaks_network
+    image: nginx:stable-alpine
     ports:
       - "8666:80"
+    networks:
+      - leaks_network
     volumes:
       - dumps:/usr/share/nginx/html/dumps
   php:

@@ -1,2 +1,2 @@
-FROM nginx:alpine
-ADD nginx/default.conf /etc/nginx/conf.d
+FROM php:8.2-apache
+COPY . /var/www/html/
