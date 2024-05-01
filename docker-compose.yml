@@ -1,13 +1,12 @@
 version: '3'
-
 services:
   app:
     networks:
       - leaks
     ports:
-      - "8666:80"
+      - '8666:80'
     volumes:
-      - dumps:/usr/share/nginx/html/dumps
+      - 'dumps:/usr/share/nginx/html/dumps'
 volumes:
   dumps:
     external: true
