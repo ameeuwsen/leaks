@@ -10,5 +10,3 @@ services:
       - leaks_app
     ports:
       - "8666:80"
-    volumes:
-      - /usr/share/nginx/html:dumps
