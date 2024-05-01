@@ -1,9 +1,12 @@
-version: "3"
+version: '3'
+
+networks:
+  leaks_app:
 
 services:
-  app:
-    read_only: true
-    build: .
+  leaks_app:
+    image: nginx:stable-alpine
+    networks:
+      - leaks_app
     ports:
-      - 8666:80
-    restart: always
+      - "8666:80"
