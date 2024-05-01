@@ -1,9 +1,5 @@
 version: '3'
 
-networks:
-  leaks:
-    driver: bridge
-
 services:
   app:
     build:
@@ -22,3 +18,6 @@ services:
 volumes:
   dumps:
     external: true
+networks:
+  leaks:
+    driver: bridge
