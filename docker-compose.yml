@@ -2,7 +2,7 @@ version: '3'
 
 services:
   app:
-    image: nginx:stable-alpine
+    build: .
     networks:
       - leaks_network
     ports:
