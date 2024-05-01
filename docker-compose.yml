@@ -4,7 +4,7 @@ services:
   app:
     image: nginx:stable-alpine
     networks:
-      - leaks
+      - leaks_network
     ports:
       - "8666:80"
     volumes:
@@ -15,4 +15,4 @@ volumes:
     external: true
 
 networks:
-  leaks:
+  leaks_network:
