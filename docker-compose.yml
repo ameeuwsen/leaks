@@ -8,8 +8,11 @@ services:
       - leaks_network
     volumes:
       - dumps:/var/www/html/public/dumps
+      - leak_thumbs:/var/www/html/public/thumbs
 volumes:
   dumps:
+    external: true
+  leak_thumbs:
     external: true
 networks:
   leaks_network:
