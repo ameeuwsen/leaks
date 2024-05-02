@@ -24,5 +24,5 @@ ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/do
 RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
     install-php-extensions amqp
 
-COPY vhosts.conf /etc/apache2/sites-enabled
+COPY 000-default.conf /etc/apache2/sites-enabled
 COPY . /var/www/html/
