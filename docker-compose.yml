@@ -10,6 +10,8 @@ services:
       - dumps:/var/www/html/public/dumps
       - leak_thumbs:/var/www/html/public/thumbs
     deploy:
+      mode: replicated
+      replicas: 2
       placement:
         constraints:
           - node.hostname==worker01
