@@ -14,10 +14,8 @@ services:
       replicas: 2
       placement:
         constraints:
-          - node.hostname==worker01
-          - node.hostname==worker02
-          - node.hostname==worker03
-          - node.hostname==worker04
+          - node.hostname!=worker05
+          - node.hostname!=worker06
 volumes:
   dumps:
     external: true
