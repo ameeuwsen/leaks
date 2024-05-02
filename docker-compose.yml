@@ -11,7 +11,7 @@ services:
       - leak_thumbs:/var/www/html/public/thumbs
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 1
       placement:
         constraints: [node.hostname == cube01 ]
 volumes:
