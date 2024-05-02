@@ -26,3 +26,4 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
 
 COPY 000-default.conf /etc/apache2/sites-enabled
 COPY . /var/www/html/
+RUN composer install
