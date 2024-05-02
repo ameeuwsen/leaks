@@ -13,7 +13,7 @@ services:
       mode: replicated
       replicas: 2
       placement:
-        constraints: [node.labels.power == high ]
+        constraints: [node.hostname == cube01 ]
 volumes:
   dumps:
     external: true
