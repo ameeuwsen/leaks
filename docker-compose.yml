@@ -13,9 +13,7 @@ services:
       mode: replicated
       replicas: 2
       placement:
-        constraints:
-          - node.hostname!=worker05
-          - node.hostname!=worker06
+        constraints: [node.labels.power == high ]
 volumes:
   dumps:
     external: true
