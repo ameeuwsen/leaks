@@ -19,13 +19,13 @@ volumes:
     driver: local
     driver_opts:
       type: cifs
-      device: "//192.168.50.51/mainSet/.other/dumps/website"
+      device: "//192.168.50.51/mainSet/.other/dumps/website/thumbs"
       o: "username=aaron,password=R32pearlz994,uid=1000,gid=1000"
   leak_dumps:
     driver: local
     driver_opts:
       type: cifs
-      device: "//192.168.50.51/mainSet/.other/dumps/website/thumbs"
+      device: "//192.168.50.51/mainSet/.other/dumps/website"
       o: "username=aaron,password=R32pearlz994,uid=1000,gid=1000"
 networks:
   leaks_network:
