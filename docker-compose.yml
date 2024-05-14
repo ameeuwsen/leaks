@@ -15,7 +15,7 @@ services:
       placement:
         constraints: [node.hostname == leader01 ]
 volumes:
-  dumps:
+  leak_dumps:
     external: true
   leak_thumbs:
     external: true
