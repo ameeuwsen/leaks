@@ -13,7 +13,7 @@ services:
       mode: replicated
       replicas: 1
       placement:
-        constraints: [node.hostname == leader01 ]
+        constraints: [node.hostname != leader01 ]
 volumes:
   leak_dumps:
     external: true
